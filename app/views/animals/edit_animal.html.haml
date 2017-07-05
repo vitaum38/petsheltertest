@@ -1,0 +1,17 @@
+%h2 Editar informações de animal
+
+=form_tag animals_edit_animal_post_path, method: :post do
+	=hidden_field_tag :id, @animal.id
+	%h4 Nome:
+	=text_field_tag :animal_name, @animal.name
+	%h4 Idade:
+	=number_field_tag :animal_age, @animal.age
+	%h4 
+		Gênero
+		%small (0 = masculino, 1 = feminino):
+		%br
+		=number_field_tag :animal_gender, @animal.gender
+	%h4 Descrição:
+	=text_area_tag :animal_description, @animal.description
+	%br
+	=submit_tag 'Editar', type: :submit

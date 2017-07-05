@@ -1,0 +1,21 @@
+%h1 Todos os animais - Lista
+%table
+	%thead
+		%tr
+			%th ID
+			%th Nome
+			%th Idade
+			%th Gênero
+			%th Descrição
+			%th Opções
+	%tbody
+		- @animals.each do |animal|
+			%tr
+				%td= animal.id
+				%td= animal.name
+				%td= animal.age
+				%td= animal.gender == 0 ? 'Macho' : 'Fêmea'
+				%td= animal.description
+				%td= link_to 'Editar', animals_edit_animal_get_path(animal.id)
+
+=link_to 'Criar Novo', animals_new_animal_get_path

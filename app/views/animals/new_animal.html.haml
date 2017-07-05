@@ -1,0 +1,16 @@
+%h2 Registrar Animal
+
+=form_tag animals_new_animal_post_path, method: :post do
+	%h4 Nome:
+	=text_field_tag :animal_name, params[:animal_name]
+	%h4 Idade:
+	=number_field_tag :animal_age, params[:animal_age]
+	%h4 
+		Gênero
+		%small (0 = masculino, 1 = feminino):
+		%br
+		=number_field_tag :animal_gender, params[:animal_gender]
+	%h4 Descrição:
+	=text_area_tag :animal_description, params[:animal_description]
+	%br
+	=submit_tag 'Criar', type: :submit
